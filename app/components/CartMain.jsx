@@ -3,6 +3,7 @@ import {Link} from '@remix-run/react';
 import {useAside} from '~/components/Aside';
 import {CartLineItem} from '~/components/CartLineItem';
 import {CartSummary} from './CartSummary';
+import {AfterShipReturnBannerWithCart} from './Banner';
 
 /**
  * The main cart component that displays the cart items and summary.
@@ -33,6 +34,7 @@ export function CartMain({layout, cart: originalCart}) {
           </ul>
         </div>
         {cartHasItems && <CartSummary cart={cart} layout={layout} />}
+        {cartHasItems && <AfterShipReturnBannerWithCart deferredCart={cart} />}
       </div>
     </div>
   );
